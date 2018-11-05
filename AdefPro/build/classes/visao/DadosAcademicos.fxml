@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="705.0" prefWidth="1364.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.DadosPessoaisController">
+   <children>
+      <Pane fx:id="pane" layoutY="-6.0" prefHeight="103.0" prefWidth="1364.0" style="-fx-background-color: #099085;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+         <children>
+            <AnchorPane layoutX="342.0" layoutY="45.0" />
+            <AnchorPane layoutX="399.0" layoutY="25.0" />
+            <ButtonBar layoutX="562.0" layoutY="56.0" />
+            <Label layoutX="81.0" layoutY="34.0" text=" Dados Academicos" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <OctIconView fill="WHITE" glyphName="BOOK" layoutX="21.0" layoutY="77.0" size="50" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="btActualizar" layoutX="1038.0" layoutY="663.0" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #00C853;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="REFRESH" size="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btAdicionar" layoutX="942.0" layoutY="663.0" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #00C0EF;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="PLUS" size="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btEditar" layoutX="1130.0" layoutY="663.0" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #F39C12;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btRemover" layoutX="1232.0" layoutY="663.0" onAction="#eliminar" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: f44336;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="20" />
+         </graphic>
+      </JFXButton>
+      <TextField layoutX="10.0" layoutY="113.0" prefHeight="25.0" prefWidth="293.0" promptText="Pesquise pelo nome" style="-fx-background-radius: 10px;" styleClass="filler" stylesheets="@fullpackstyling.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <FontAwesomeIconView fill="#099085" glyphName="SEARCH" layoutX="281.0" layoutY="133.0" />
+      <JFXTabPane layoutX="8.0" layoutY="152.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="505.0" prefWidth="1360.0" rotateGraphic="true" style="-fx-background-color: white;" styleClass="tab" stylesheets="@tab.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab closable="false" style="-fx-background-color: white;" text="                                                DADOS ACADEMICOS  I                                                                         ">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1208.0">
+                     <children>
+                        <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="476.0" prefWidth="1360.0">
+                           <children>
+                              <TableView fx:id="table" layoutX="8.0" layoutY="10.0" prefHeight="464.0" prefWidth="1337.0" stylesheets="@fullpackstyling.css">
+                                 <columns>
+                                    <TableColumn fx:id="colNome" prefWidth="75.0" text="Nome" />
+                                    <TableColumn fx:id="colCurso" prefWidth="75.0" text="Curso" />
+                                    <TableColumn fx:id="ColUniversidade" prefWidth="75.0" text="Universidade" />
+                                    <TableColumn fx:id="colFaculdade" prefWidth="75.0" text="Faculdade" />
+                                    <TableColumn fx:id="colDepartamento" prefWidth="75.0" text="Departamento" />
+                                    <TableColumn fx:id="colTipoEstudante" prefWidth="75.0" text="Tipo de Estudante" />
+                                    <TableColumn fx:id="colResidencia" prefWidth="75.0" text="Residencia" />
+                                    <TableColumn fx:id="colDuracao" prefWidth="75.0" text="Duracao de Curso" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" style="-fx-background-color: white;" text="                                                    DADOS ACADEMICOS II                                                                                                                              ">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1360.0">
+                     <children>
+                        <Pane layoutY="3.0" prefHeight="456.0" prefWidth="1360.0">
+                           <children>
+                              <TableView fx:id="table1" layoutX="6.0" layoutY="2.0" prefHeight="464.0" prefWidth="1329.0" stylesheets="@fullpackstyling.css">
+                                 <columns>
+                                    <TableColumn fx:id="colNome2" prefWidth="75.0" text="Nome" />
+                                    <TableColumn fx:id="colAnoLectivo" prefWidth="75.0" text="Ano Lectivo" />
+                                    <TableColumn fx:id="colSemestre" prefWidth="75.0" text="Semestre" />
+                                    <TableColumn fx:id="colTotalDeCadeiras" prefWidth="75.0" text="Total De Cadeiras" />
+                                    <TableColumn fx:id="colCadeirasAprovadas" prefWidth="75.0" text="Cadeiras Aprovadas" />
+                                    <TableColumn fx:id="colCadeirasReprovadas" prefWidth="75.0" text="Cadeiras Reprovadas" />
+                                    <TableColumn fx:id="colMediaSemestral" prefWidth="75.0" text="Media Semestral" />
+                                    <TableColumn fx:id="colMediaDoEnsinoMedio" prefWidth="75.0" text="Media do Ensino Medio" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

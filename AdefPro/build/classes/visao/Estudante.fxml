@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="705.0" prefWidth="1364.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visao.EstudanteController">
+   <children>
+      <Pane fx:id="pane" layoutY="-6.0" prefHeight="103.0" prefWidth="1364.0" style="-fx-background-color: #099085;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+         <children>
+            <AnchorPane layoutX="342.0" layoutY="45.0" />
+            <AnchorPane layoutX="399.0" layoutY="25.0" />
+            <ButtonBar layoutX="562.0" layoutY="56.0" />
+            <Label layoutX="101.0" layoutY="34.0" text=" Estudante" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="67.0" size="45" wrappingWidth="12.0" />
+         </children>
+      </Pane>
+      <Label layoutX="50.0" layoutY="304.0" prefHeight="24.0" prefWidth="45.0" text="Foto" />
+      <Separator layoutX="11.0" layoutY="147.0" orientation="VERTICAL" prefHeight="152.0" prefWidth="4.0" />
+      <Separator layoutX="123.0" layoutY="147.0" orientation="VERTICAL" prefHeight="152.0" prefWidth="4.0" />
+      <Separator layoutX="13.0" layoutY="148.0" prefHeight="3.0" prefWidth="113.0" />
+      <Separator layoutX="12.0" layoutY="299.0" prefHeight="2.0" prefWidth="113.0" />
+      <JFXButton fx:id="btActualizar" layoutX="1038.0" layoutY="663.0" onAction="#actualizar" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #00C853;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="REFRESH" size="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btAdicionar" layoutX="942.0" layoutY="663.0" onAction="#gravar" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #00C0EF;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="PLUS" size="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btEditar" layoutX="1130.0" layoutY="663.0" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #F39C12;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="20" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btRemover" layoutX="1232.0" layoutY="663.0" onAction="#eliminar" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: f44336;" stylesheets="@newCascadeStyleSheet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Roboto Medium" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="20" />
+         </graphic>
+      </JFXButton>
+      <JFXTabPane layoutX="158.0" layoutY="142.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="514.0" prefWidth="1200.0" rotateGraphic="true" style="-fx-background-color: white;" styleClass="tab" stylesheets="@tab.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab closable="false" style="-fx-background-color: white;" text="                                                DADOS PESSOAIS I                                                    ">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1208.0">
+                     <children>
+                        <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="484.0" prefWidth="1210.0">
+                           <children>
+                              <TableView fx:id="table" layoutX="8.0" layoutY="10.0" prefHeight="464.0" prefWidth="1190.0" stylesheets="@fullpackstyling.css">
+                                 <columns>
+                                    <TableColumn fx:id="colICod" prefWidth="75.0" text="Codigo" />
+                                    <TableColumn fx:id="colNome" prefWidth="75.0" text="Nome" />
+                                    <TableColumn fx:id="colApelido" prefWidth="75.0" text="Apelido" />
+                                    <TableColumn fx:id="ColDataNasc" prefWidth="75.0" text="Data de Nasc" />
+                                    <TableColumn fx:id="colMaturalidade" prefWidth="75.0" text="Naturalidade" />
+                                    <TableColumn fx:id="colGenero" prefWidth="75.0" text="Genero" />
+                                    <TableColumn fx:id="colEstadoCivil" prefWidth="75.0" text="Estado Civil" />
+                                    <TableColumn fx:id="colContacto" prefWidth="75.0" text="Contacto" />
+                                    <TableColumn fx:id="colBI" prefWidth="75.0" text="Nr de BI" />
+                                    <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" style="-fx-background-color: white;" text="                                                    DADOS PESSOAIS II                                                                                              ">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1200.0" />
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <TextField layoutX="160.0" layoutY="103.0" prefHeight="25.0" prefWidth="293.0" promptText="Pesquise pelo nome" style="-fx-background-radius: 10px;" styleClass="filler" stylesheets="@fullpackstyling.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <FontAwesomeIconView fill="#099085" glyphName="SEARCH" layoutX="431.0" layoutY="123.0" />
+   </children>
+</AnchorPane>
